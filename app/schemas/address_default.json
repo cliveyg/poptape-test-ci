@@ -1,0 +1,16 @@
+{     
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Address schema",
+  "type": "object",
+  "properties": {
+	"public_id": {"type": "string", "maxLength": 50},
+        "house_name": {"type": "string", "maxLength": 50},
+	"house_number": {"type": "string", "maxLength": 50},
+	"address_line_1": {"type": "string", "maxLength": 150},
+	"address_line_2": {"type": "string", "maxLength": 150},
+	"address_line_3": {"type": "string", "maxLength": 150},
+	"state_region_county": {"type": "string", "maxLength": 150},
+	"post_zip_code": {"type": "string", "maxLength": 30}
+  },
+  "additionalProperties": false
+}

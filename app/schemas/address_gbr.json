@@ -1,0 +1,19 @@
+{     
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Address schema for UK. Uses RegEx supplied by UK Gov",
+  "type": "object",
+  "properties": {
+	"public_id": {"type": "string", "maxLength": 50},
+        "house_name": {"type": "string", "maxLength": 50},
+	"house_number": {"type": "string", "maxLength": 50},
+	"address_line_1": {"type": "string", "maxLength": 150},
+	"address_line_2": {"type": "string", "maxLength": 150},
+	"address_line_3": {"type": "string", "maxLength": 150},
+	"state_region_county": {"type": "string", "maxLength": 150},
+	"post_zip_code": {"type": "string", "minLength": 5, "maxLength": 9,
+"pattern": "([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\\s?[0-9][A-Za-z]{2})"}
+  },
+  "additionalProperties": false,
+  "required": ["post_zip_code"],
+  "anyOf": [ { "required": ["house_name"] }, { "required": ["house_number"] } ]
+}
